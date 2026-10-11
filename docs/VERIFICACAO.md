@@ -2,7 +2,7 @@
 
 ## Resultado
 
-Versão de produção executada localmente em `http://127.0.0.1:3000`, com Node.js 24.19.0 e Chrome instalado. Nenhum deploy realizado. A identidade e o conteúdo seguem demonstrativos por escolha do usuário.
+Verificações originais executadas localmente em `http://127.0.0.1:3000`, com Node.js 24.19.0 e Chrome instalado. Publicação pública autorizada posteriormente em 11/10/2026; os resultados locais abaixo não são medições do site hospedado. A identidade e o conteúdo seguem demonstrativos por escolha do usuário.
 
 | Verificação executada | Resultado |
 | --- | --- |
@@ -45,7 +45,7 @@ A nota SEO está reduzida porque a demonstração bloqueia indexação (`noindex
 
 O LCP mobile de 3,4 s ainda não atinge a referência de 2,5 s no perfil sintético usado. A meta de 90 em performance foi atingida, mas não se declara desempenho real de Core Web Vitals nem INP: não há dados de usuários reais. Execuções anteriores oscilaram entre 90 e 93 em performance mobile.
 
-Relatórios completos nesta pasta: `lighthouse-mobile.html`, `lighthouse-desktop.html` e JSONs correspondentes. O JSON `playwright-results.json` contém os resultados dos cenários finais.
+Relatórios completos estão na entrega local: `lighthouse-mobile.html`, `lighthouse-desktop.html` e JSONs correspondentes. O JSON `playwright-results.json` contém os resultados dos cenários finais. Esses arquivos brutos não são publicados no Git para preservar caminhos locais; o resumo acima é versionado.
 
 ## Correções decorrentes das verificações
 
@@ -67,6 +67,6 @@ Relatórios completos nesta pasta: `lighthouse-mobile.html`, `lighthouse-desktop
 - Normas vigentes da OAB, artigos, identidade profissional e aviso de privacidade precisam de revisão pelo responsável antes de publicação institucional.
 - Testes de navegador executados em Chrome; não se declara teste de Safari, Firefox ou aparelhos físicos.
 - Testes automáticos de acessibilidade e nota 100 do Lighthouse não equivalem a certificação integral WCAG.
-- Não foram realizadas medição de INP em campo, carga concorrente, entrega de e-mail, testes de caixa de entrada ou publicação na Vercel.
+- Não foram realizadas medição de INP em campo, carga concorrente, entrega de e-mail ou testes de caixa de entrada.
 
 As orientações das habilidades UI/UX e revisão React influenciaram a adaptação mobile, contraste, foco, separação de código cliente/servidor e limpeza das animações. A habilidade de verificação foi usada para ligar ações da interface, validação, endpoint e respostas de sucesso/erro.

@@ -90,9 +90,18 @@ Os testes de navegador usam Chrome instalado. Para usar Edge: defina `PLAYWRIGHT
 
 Veja `docs/VERIFICACAO.md` para resultados reais, condições e limitações.
 
-## Vercel — publicação futura
+## Publicação pública
 
-Nenhuma publicação ou contratação foi feita.
+Publicação autorizada pelo proprietário em 11/10/2026.
+
+- Código público: https://github.com/brusynbr/almeida-serra-advocacia-demo
+- Site de demonstração: https://almeida-serra-advocacia-demo.vercel.app
+- Projeto Vercel na equipe Brusyn, conectado ao GitHub; produção usa a branch `main`.
+- `SITE_DEMO=true`, origem HTTPS configurada, sem senha ou autenticação Vercel para visitantes.
+- Nenhuma credencial de envio incluída. O formulário continua apenas validando, sem enviar mensagens.
+- Credenciais, dependências, cache de build e relatórios brutos com caminhos locais não são versionados.
+
+Para futuras publicações:
 
 1. Envie este diretório a um repositório autorizado, excluindo `.env.local`, `node_modules`, `.next` e resultados temporários.
 2. Importe o repositório na Vercel usando o preset Next.js e este diretório como raiz.
