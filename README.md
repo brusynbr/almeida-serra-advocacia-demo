@@ -28,7 +28,7 @@ pnpm start
 
 - Next.js 16.4 com App Router, React, TypeScript e Tailwind CSS 4.
 - GSAP 3.15 e ScrollTrigger: hero fixado, expansão progressiva da fotografia, texto institucional fixado, painéis horizontais e manifesto sincronizado à rolagem.
-- Mobile com sequência vertical, movimentos menores e menu em diálogo nativo com foco e Escape.
+- Mobile animado: entrada escalonada do título, fotografia com zoom/parallax, linhas institucionais, painéis alternados e revelação de leituras/formulário; sequência vertical sem pinning e menu em diálogo nativo com foco e Escape.
 - `prefers-reduced-motion`: elimina pinning e transforms narrativos; conserva conteúdos e funções.
 - Header, navegação por âncoras, progresso, três artigos individuais, privacidade e página 404.
 - Formulário com validação compartilhada entre cliente e servidor, resumo acessível de erros, preservação dos dados em caso de falha, estados de envio/sucesso/erro e integração preparada para envio real.

@@ -2,6 +2,8 @@
 
 ## Resultado
 
+Atualização mobile: entrada escalonada, fotografia com zoom/parallax reversível, linhas institucionais e painéis com deslocamentos curtos; leituras e formulário acompanham a rolagem. Sem pinning, sem interceptação de gestos, sem nova dependência. Orientação UI/UX aplicada para manter o conteúdo visível e respeitar movimento reduzido. Build e lint passaram; 9 testes unitários e 6 cenários E2E passaram, incluindo o novo teste de transformação mobile, reversão e troca dinâmica para movimento reduzido. Responsividade verificada de 375 a 1920 px e em paisagem; não equivale a teste em aparelho físico.
+
 Verificações originais executadas localmente em `http://127.0.0.1:3000`, com Node.js 24.19.0 e Chrome instalado. Publicação pública autorizada posteriormente em 11/10/2026; os resultados locais abaixo não são medições do site hospedado. A identidade e o conteúdo seguem demonstrativos por escolha do usuário.
 
 | Verificação executada | Resultado |

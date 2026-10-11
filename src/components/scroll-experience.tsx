@@ -41,7 +41,17 @@ export function ScrollExperience({ children }: { children: React.ReactNode }) {
           track.addEventListener("focusin", focusPanel);
           removeFocusListener = () => track.removeEventListener("focusin", focusPanel);
         } else {
-          gsap.to(".hero-photo img", { yPercent: 5, ease: "none", scrollTrigger: { trigger: ".hero-scene", start: "top top", end: "bottom top", scrub: true } });
+          // Touch narrative: visible motion without pinning or intercepting gestures.
+          gsap.from(".hero-copy > *", { y: 20, duration: 0.75, stagger: 0.09, ease: "power2.out", clearProps: "transform" });
+          gsap.fromTo(".hero-photo img", { scale: 1.12, yPercent: -3 }, { scale: 1.02, yPercent: 3, ease: "none", scrollTrigger: { id: "mobile-hero-story", trigger: ".hero-photo", start: "top bottom", end: "bottom top", scrub: 0.4 } });
+          gsap.fromTo(".about-heading .line", { y: 28 }, { y: 0, stagger: 0.15, ease: "none", scrollTrigger: { trigger: ".about-heading", start: "top 90%", end: "bottom 55%", scrub: 0.35 } });
+          gsap.utils.toArray<HTMLElement>(".practice-panel").forEach((panel, index) => {
+            gsap.fromTo(panel.querySelector(".panel-copy"), { x: index % 2 ? -24 : 24, y: 20 }, { x: 0, y: 0, ease: "none", scrollTrigger: { trigger: panel, start: "top 92%", end: "top 35%", scrub: 0.35 } });
+            gsap.fromTo(panel.querySelector(".panel-photo img"), { scale: 1.1 }, { scale: 1, ease: "none", scrollTrigger: { trigger: panel.querySelector(".panel-photo"), start: "top bottom", end: "bottom 30%", scrub: 0.4 } });
+          });
+          gsap.utils.toArray<HTMLElement>(".article-row, .team-copy, .contact-form").forEach(element => {
+            gsap.fromTo(element, { y: 24 }, { y: 0, ease: "none", scrollTrigger: { trigger: element, start: "top 95%", end: "top 70%", scrub: 0.3 } });
+          });
         }
         gsap.utils.toArray<HTMLElement>(".reveal").forEach(element => {
           gsap.fromTo(element, { y: 32 }, { y: 0, ease: "none", scrollTrigger: { trigger: element, start: "top 93%", end: "top 65%", scrub: 0.3 } });

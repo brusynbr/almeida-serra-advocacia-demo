@@ -57,6 +57,24 @@ test("responsive widths and viewport resizing",async({page})=>{
   await page.setViewportSize({width:844,height:390});await page.waitForTimeout(700);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
 });
 
+test("mobile scroll animations reverse and respect reduced motion",async({page})=>{
+  await page.setViewportSize({width:390,height:844});await page.goto("/");await page.waitForTimeout(1100);
+  const image=page.locator(".hero-photo img");
+  const initial=await image.evaluate(el=>getComputedStyle(el).transform);
+  await page.evaluate(()=>scrollTo(0,650));await page.waitForTimeout(800);
+  expect(await image.evaluate(el=>getComputedStyle(el).transform)).not.toBe(initial);
+  await page.evaluate(()=>scrollTo(0,0));await page.waitForTimeout(800);
+  expect(await image.evaluate(el=>getComputedStyle(el).transform)).toBe(initial);
+  const panel=page.locator(".panel-copy").first();
+  const before=await panel.evaluate(el=>getComputedStyle(el).transform);
+  await page.locator(".practice-panel").first().scrollIntoViewIfNeeded();await page.waitForTimeout(800);
+  expect(await panel.evaluate(el=>getComputedStyle(el).transform)).not.toBe(before);
+  await expect(page.locator(".pin-spacer")).toHaveCount(0);
+  await page.emulateMedia({reducedMotion:"reduce"});await page.waitForTimeout(500);
+  expect(await panel.evaluate(el=>getComputedStyle(el).transform)).toBe("none");
+  await expect(page.locator(".pin-spacer")).toHaveCount(0);
+});
+
 test("reduced motion exposes all panels without pinning, accessible pages",async({page})=>{
   await page.emulateMedia({reducedMotion:"reduce"});await page.setViewportSize({width:1440,height:900});await page.goto("/");
   await expect(page.locator(".pin-spacer")).toHaveCount(0);
