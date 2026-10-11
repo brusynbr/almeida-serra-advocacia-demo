@@ -1,0 +1,10 @@
+node_modules/
+.next/
+.env*
+!.env.example
+*.tsbuildinfo
+test-results/
+.vercel/
+docs/lighthouse-*.html
+docs/lighthouse-*.json
+docs/playwright-results.json
